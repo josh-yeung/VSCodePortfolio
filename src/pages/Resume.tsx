@@ -5,7 +5,7 @@ const Resume = () => {
   return (
     <div
       id="Resume"
-      className="lg:w-1/2 mt-64 mb-4 text-justify mx-12 lg:mr-60 lg:ml-auto"
+      className="lg:w-1/2 mt-16 mb-4 text-justify mx-12 lg:mr-60 lg:ml-60"
     >
       <div>
         <div className="table">
@@ -21,60 +21,83 @@ const Resume = () => {
           <div className="w-1/4">
             <code className="text-yellow_vs">Education</code>
           </div>
-          <div className="w-3/4">
-            <code className="text-blue_vs">Lorem Ipsum</code>
+          <div className="w-3/4 flex flex-col gap-4">
+          <div>
+            <code className="text-blue_vs">University of Waterloo</code>
             <br />
             <code className="italic text-sm text-lightblue_vs">
-              Masters in Information technology
+              Bachelor of Computer Science
             </code>
             <br />
             <code className="text-xs text-brown_vs">
-              • Sept 2014 - July 2017
+              • Sept 2021 - August 2026
+            </code>
+            <br />
+            <code className="text-sm">
+              Relevant Coursework: 
+              <p className="pl-4">
+                Object-Oriented Programming, Data Structures & Algorithms, Operating Systems,
+                Probability, Statistics, Linear Algebra
+              </p>
             </code>
           </div>
+          <div>
+            <code className="text-blue_vs">Wilfrid Laurier University</code>
+            <br />
+            <code className="italic text-sm text-lightblue_vs">
+              Bachelor of Business Administration
+            </code>
+            <br />
+            <code className="text-xs text-brown_vs">
+              • Sept 2021 - August 2026
+            </code>
+            <br />
+            <code className="text-sm">
+              Relevant Coursework: 
+              <p className="pl-4">
+                Finance, Economics, Accounting, Organizational Behaviour, Business Law, Human Resources Management,
+                Marketing Management
+              </p>
+            </code>
+          </div>
+        </div>
         </div>
         <div className="flex flex-row pt-10">
           <div className="w-1/4">
-            <code className="text-yellow_vs">Work</code>
+            <code className="text-yellow_vs">Experience</code>
           </div>
           <div className="w-3/4">
-            <code className="text-blue_vs">Lorem Ipsum</code>
+            <div>
+              <code className="text-blue_vs">Software Developer</code>
+              <br />
+              <code className="italic text-sm text-lightblue_vs">
+                Bank of Montreal
+              </code>
+              <br />
+              <code className="text-xs text-brown_vs">• January 2025 - April 2025</code>
+            </div>
             <br />
-            <code className="italic text-sm text-lightblue_vs">
-              Lorem - Paris, France{" "}
-            </code>
+            <div>
+              <code className="text-blue_vs">Business Analyst</code>
+              <br />
+              <code className="italic text-sm text-lightblue_vs">
+                Bank of Montreal
+              </code>
+              <br />
+              <code className="text-xs text-brown_vs">• January 2024 - April 2024</code>
+              <br />
+            </div>
             <br />
-            <code className="text-xs text-brown_vs">• July 2017 - Present</code>
-            <br />
-            <code className="text-sm">
-              <br />• Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br />• Sed id eros non nisi vulputate eleifend. Vestibulum erat
-              ipsum, lacinia ut nibh ut, pulvinar interdum lorem.
-              <br />• Aliquam et nisi eu risus ultrices suscipit nec nec quam.
-              <br />• Suspendisse pretium fermentum luctus.
-              <br />• Maecenas vitae vestibulum ipsum, ut varius diam.
-              <br />• Phasellus mattis nunc vel purus maximus.
-            </code>
-          </div>
-        </div>
-        <div className="flex flex-row pt-10 flex-wrap">
-          <div className="w-1/4">
-            <code className="text-yellow_vs">Skills</code>
-          </div>
-          <div className="w-3/4">
-            <code className="text-sm">
-              <br />• Nulla tristique luctus lacinia. Nullam ut tortor arcu.
-              <br />• Aenean in mi non leo placerat suscipit a eget odio.
-              <br />• Vivamus et dolor odio.
-              <br />• Suspendisse tempus interdum eros, et bibendum massa tempus
-              vitae.
-              <br />• Sed in aliquam ligula. Sed eget orci tortor.
-              <br />• Pellentesque laoreet laoreet justo, sed efficitur sapien
-              tincidunt eu.
-              <br />• Nulla tempor nunc eu molestie volutpat. Nunc a accumsan
-              dolor.
-              <br />• Duis ut congue dui.
-            </code>
+            <div>
+              <code className="text-blue_vs">Financial Analyst / Junior Underwriter</code>
+              <br />
+              <code className="italic text-sm text-lightblue_vs">
+              Trisura Guarantee Insurance Company
+              </code>
+              <br />
+              <code className="text-xs text-brown_vs">• January 2023 - April 2023</code>
+              <br />
+            </div>
           </div>
         </div>
       </div>
