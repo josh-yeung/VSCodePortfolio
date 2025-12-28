@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import { SIDEBAR_FILES, TabId } from "../constants/tabs";
 
 const GitLogo = require("../assets/logos/GitLogo.png");
 const LinkedinLogo = require("../assets/logos/LinkedinLogo.png");
 const KaggleLogo = require("../assets/logos/KaggleLogo.png");
 const MailLogo = require("../assets/logos/MailLogo.png");
 
-const JSIcon = require("../assets/icons/JSIcon.png");
-const TSIcon = require("../assets/icons/TSIcon.png");
-
 const SideBar = ({
   setWidth,
   width,
+  onOpenTab,
 }: {
   setWidth: React.Dispatch<React.SetStateAction<number>>;
   width: number;
+  onOpenTab: (tabId: TabId) => void;
 }) => {
   const [showWebList, SetShowWebList] = useState(true);
   const [showProjectsList, SetShowProjectsList] = useState(true);
@@ -71,7 +71,7 @@ const SideBar = ({
 
                 <p>Web</p>
               </div>
-              {showWebList ? <WebList /> : null}
+              {showWebList ? <WebList onOpenTab={onOpenTab} /> : null}
             </>
           ) : null}
           <div className="absolute w-full bottom-10 px-6">
@@ -118,47 +118,24 @@ const SideBar = ({
 
 export default SideBar;
 
-const WebList = () => (
-  <div className="flex flex-col">
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
-        <p>First Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img
-          src={TSIcon}
-          alt="TS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
-        <p>Second Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] focus:bg-slate-300 ml-12">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
-        <p>Third Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] ml-12">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
-        <p>Fourth Project</p>
-      </div>
-    </a>
+const WebList = ({ onOpenTab }: { onOpenTab: (tabId: TabId) => void }) => (
+  <div className="flex flex-col mt-1">
+    {SIDEBAR_FILES.map((file) => (
+      <button
+        type="button"
+        key={file.id}
+        onClick={() => onOpenTab(file.id)}
+        className="ml-12 text-left"
+      >
+        <div className="flex items-center py-1 pr-2 hover:bg-[#2b2a2a] hover:cursor-pointer rounded">
+          <img
+            src={file.icon}
+            alt={`${file.sidebarLabel} icon`}
+            className="h-5 w-5 mr-2 ml-5"
+          />
+          <p>{file.sidebarLabel}</p>
+        </div>
+      </button>
+    ))}
   </div>
 );

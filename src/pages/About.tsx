@@ -1,40 +1,12 @@
 import React from "react";
 import { IdentificationIcon } from "@heroicons/react/solid";
-import List from "../components/List";
 
-const PythonLogo = require("../assets/logos/PythonLogo.png");
-const ReactLogo = require("../assets/logos/ReactLogo.png");
-const TypescriptLogo = require("../assets/logos/TypescriptLogo.png");
-const JsLogo = require("../assets/logos/JsLogo.png");
-const NextLogo = require("../assets/logos/NextLogo.png");
-const TailwindLogo = require("../assets/logos/TailwindLogo.png");
-const SqlLogo = require("../assets/logos/SqlLogo.png");
-const ReduxLogo = require("../assets/logos/ReduxLogo.png");
-const FirebaseLogo = require("../assets/logos/FirebaseLogo.png");
-const MongoDBLogo = require("../assets/logos/MongoDBLogo.png");
-const NodeJSLogo = require("../assets/logos/NodeJSLogo.png");
-const DockerLogo = require("../assets/logos/DockerLogo.png");
-
-const skills = [
-  { name: "JavaScript (ES6+)", logo: JsLogo },
-  { name: "Next.js", logo: NextLogo },
-  { name: "React", logo: ReactLogo },
-  { name: "TypeScript", logo: TypescriptLogo },
-  { name: "Tailwind CSS", logo: TailwindLogo },
-  { name: "Redux", logo: ReduxLogo },
-  { name: "Python", logo: PythonLogo },
-  { name: "Firebase", logo: FirebaseLogo },
-  { name: "Nodejs", logo: NodeJSLogo },
-  { name: "SQL", logo: SqlLogo },
-  { name: "MongoDB", logo: MongoDBLogo },
-  { name: "Docker", logo: DockerLogo },
-];
 
 const About = () => {
   return (
     <div
       id="About"
-      className="flex mx-12 mt-60 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
+      className="flex mx-12 mt-16 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
     >
       <div>
         <div className="table">
@@ -46,18 +18,19 @@ const About = () => {
         </div>
         <div className="text-[#a2aabc] text-lg mt-5">
           <code>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eros
-            non nisi vulputate eleifend. Vestibulum erat ipsum, lacinia ut nibh
-            ut, pulvinar interdum lorem. Aliquam et nisi eu risus ultrices
-            suscipit nec nec quam. Suspendisse pretium fermentum luctus.
-            Maecenas vitae vestibulum ipsum, ut varius diam. Phasellus mattis
-            nunc vel purus maximus, sit amet congue ligula tincidunt. Nulla
-            tristique luctus lacinia. Nullam ut tortor arcu.
+👋 Hi, I'm Josh! I'm currently in my fifth year studying Computer Science & Business at the University of Waterloo and Wilfrid Laurier University. I'm passionate about building software with real world impact and love working on projects that genuinely help people.
+
+I've had the opportunity to work as a Software Developer at BMO, where I built cloud-based systems on AWS, developed accessible web components, and worked on AI-powered tools including RAG chatbots and multi-agent systems. I enjoy working across the stack, from backend APIs and cloud infrastructure to clean intuitive frontends.
+
+Outside of internships, I'm involved with UW Blueprint, where I help build accessible, real world software for nonprofits. I'm especially interested in using technology to improve inclusion, usability, and user experience 🌱
+
+I enjoy keeping up with today's fast changing tech landscape and turning complex problems into simple, reliable solutions. In my free time, I love to play any racket sport from old to new!
+
+📬 Feel free to reach out, I'm always happy to connect!
           </code>
           <br />
           <br />
           <code>Aenean in mi non leo placerat suscipit a eget odio:</code>
-          <List list={skills} />
         </div>
       </div>
     </div>

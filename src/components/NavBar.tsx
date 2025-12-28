@@ -1,129 +1,129 @@
-import React, { useState } from 'react';
+import React from "react";
 import tw from "tailwind-styled-components";
 import { XIcon } from "@heroicons/react/solid";
+import { TAB_CONFIG, TabId } from "../constants/tabs";
 
-const TSIcon = require("../assets/icons/TSIcon.png");
-
-const Container = tw.div`
-  h-full 
-  flex 
-  items-center 
-  justify-center
-  px-4 
-  text-white 
-  hover:bg-[#1e1e1e]
-  hover:text-yellow_vs
-  cursor-pointer
-  text-lg
+const Container = tw.button`
+  h-full
+  flex
+  items-center
+  px-4
+  gap-2
+  text-sm
   font-medium
   text-gray-300
+  hover:bg-[#2d2d2d]
+  hover:text-yellow_vs
+  border-r
+  border-[#2f2f2f]
+  border-b-2
+  border-b-transparent
+  transition-colors
+  cursor-pointer
+  focus:outline-none
 `;
 
 interface Props {
-  activeTab: string;
-  setActiveTab: React.Dispatch<React.SetStateAction<string>>;
+  activeTab: TabId | "";
+  setActiveTab: React.Dispatch<React.SetStateAction<TabId | "">>;
+  openTabs: TabId[];
+  onCloseTab: (tabId: TabId) => void;
+  onOpenTab: (tabId: TabId) => void;
+  onReorderTabs: (sourceTab: TabId, targetTab: TabId | null) => void;
 }
 
-const NavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
-  const [closedTabs, setClosedTabs] = useState<string[]>([]);
+const NavBar: React.FC<Props> = ({
+  activeTab,
+  setActiveTab,
+  openTabs,
+  onCloseTab,
+  onOpenTab,
+  onReorderTabs,
+}) => {
+  const handleMiddleClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    tabId: TabId
+  ) => {
+    if (event.button === 1) {
+      event.preventDefault();
+      onCloseTab(tabId);
+    }
+  };
+
+  const handleDragStart = (
+    event: React.DragEvent<HTMLButtonElement>,
+    tabId: TabId
+  ) => {
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/tab-id", tabId);
+  };
+
+  const handleDrop = (
+    event: React.DragEvent<HTMLButtonElement | HTMLDivElement>,
+    targetTab: TabId | null
+  ) => {
+    event.preventDefault();
+    const sourceId = event.dataTransfer.getData("text/tab-id") as TabId;
+    if (!sourceId || sourceId === targetTab) {
+      return;
+    }
+    onReorderTabs(sourceId, targetTab);
+  };
+
+  const allowDrop = (event: React.DragEvent) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+  };
 
   return (
-    <div className="flex flex-row h-full">
-      <Container
-        className={
-          activeTab === "home"
-            ? "bg-[#1e1e1e] text-yellow_vs"
-            : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
-        }
-        onClick={() => {
-          setActiveTab("home");
-        }}
-      >
-        <img src={TSIcon} alt="JS Icon" className="w-7 mr-1  text-yellow_vs" />
-        Home.ts
-      </Container>
+    <div className="flex flex-row h-full w-full overflow-x-auto">
+      {openTabs.length ? (
+        openTabs.map((tabId) => {
+          const tabInfo = TAB_CONFIG[tabId];
+          const isActive = activeTab === tabId;
 
-      {closedTabs.includes("about") ? null : (
-        <Container
-          hidden={"about" in closedTabs}
-          className={
-            activeTab === "about"
-              ? "bg-[#1e1e1e] text-yellow_vs"
-              : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
-          }
-          onClick={() => {
-            setActiveTab("about");
-          }}
-        >
-          <img
-            src={TSIcon}
-            alt="JS Icon"
-            className="w-7 mr-1  text-yellow_vs"
-          />
-          About.ts
-          <XIcon
-            className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveTab("home");
-              setClosedTabs((prevState) => [...prevState, "about"]);
-            }}
-          />
-        </Container>
-      )}
-
-      {closedTabs.includes("resume") ? null : (
-        <Container
-          className={
-            activeTab === "resume"
-              ? "bg-[#1e1e1e] text-yellow_vs"
-              : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
-          }
-          onClick={() => {
-            setActiveTab("resume");
-          }}
-        >
-          <img
-            src={TSIcon}
-            alt="JS Icon"
-            className="w-7 mr-1  text-yellow_vs"
-          />
-          Resume.ts
-          <XIcon
-            className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveTab("home");
-              setClosedTabs((prevState) => [...prevState, "resume"]);
-            }}
-          />
-        </Container>
-      )}
-
-      {closedTabs.includes("contact") ? null : (
-        <Container
-          className={
-            activeTab === "contact"
-              ? "bg-[#1e1e1e] text-yellow_vs"
-              : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
-          }
-          onClick={() => {
-            setActiveTab("contact");
-          }}
-        >
-          <img src={TSIcon} alt="JS Icon" className="w-7 mr-1 text-yellow_vs" />
-          Contact.ts
-          <XIcon
-            className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveTab("home");
-              setClosedTabs((prevState) => [...prevState, "contact"]);
-            }}
-          />
-        </Container>
-      )}
+          return (
+            <Container
+              key={tabId}
+              type="button"
+              draggable
+              onClick={() => setActiveTab(tabId)}
+              onMouseDown={(event) => handleMiddleClick(event, tabId)}
+              onDragStart={(event) => handleDragStart(event, tabId)}
+              onDragOver={allowDrop}
+              onDrop={(event) => handleDrop(event, tabId)}
+              className={
+                isActive
+                  ? "bg-[#1e1e1e] text-yellow_vs border-b-2 border-b-yellow_vs"
+                  : "text-gray-300"
+              }
+            >
+              <img
+                src={tabInfo.icon}
+                alt={`${tabInfo.label} icon`}
+                className="h-5 w-5"
+              />
+              <span>{tabInfo.label}</span>
+              <XIcon
+                className="w-4 h-4 ml-2 text-gray-400 hover:text-white"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onCloseTab(tabId);
+                }}
+              />
+            </Container>
+          );
+        })
+      ) : null}
+      {openTabs.length ? (
+        <div
+          className="w-4 h-full"
+          onDragOver={allowDrop}
+          onDrop={(event) => handleDrop(event, null)}
+        />
+      ) : null}
     </div>
   );
 };
+
 export default NavBar;
