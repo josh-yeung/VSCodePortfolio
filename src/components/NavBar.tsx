@@ -63,6 +63,7 @@ const NavBar: React.FC<Props> = ({
     targetTab: TabId | null
   ) => {
     event.preventDefault();
+    event.stopPropagation();
     const sourceId = event.dataTransfer.getData("text/tab-id") as TabId;
     if (!sourceId || sourceId === targetTab) {
       return;
@@ -76,7 +77,11 @@ const NavBar: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex flex-row h-full w-full overflow-x-auto">
+    <div
+      className="flex flex-row h-full w-full overflow-x-auto"
+      onDragOver={allowDrop}
+      onDrop={(event) => handleDrop(event, null)}
+    >
       {openTabs.length ? (
         openTabs.map((tabId) => {
           const tabInfo = TAB_CONFIG[tabId];
