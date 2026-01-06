@@ -5,7 +5,7 @@ const Resume = () => {
   return (
     <div
       id="Resume"
-      className="lg:w-1/2 mt-16 mb-4 text-justify mx-12 lg:mr-60 lg:ml-60"
+      className="lg:w-1/2 mt-16 mb-4 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
     >
       <div>
         <div className="table">
@@ -34,39 +34,25 @@ const Resume = () => {
             <code className="text-blue_vs">University of Waterloo</code>
             <br />
             <code className="italic text-sm text-lightblue_vs">
-              Bachelor of Computer Science
+              Bachelor of Computer Science | Waterloo, ON
             </code>
             <br />
             <code className="text-xs text-brown_vs">
-              • Sept 2021 - August 2026
+              • September 2021 - August 2026
             </code>
             <br />
-            <code className="text-sm">
-              Relevant Coursework: 
-              <p className="pl-4">
-                Object-Oriented Programming, Data Structures & Algorithms, Operating Systems,
-                Probability, Statistics, Linear Algebra
-              </p>
-            </code>
           </div>
           <div>
             <code className="text-blue_vs">Wilfrid Laurier University</code>
             <br />
             <code className="italic text-sm text-lightblue_vs">
-              Bachelor of Business Administration
+              Bachelor of Business Administration | Waterloo, ON
             </code>
             <br />
             <code className="text-xs text-brown_vs">
-              • Sept 2021 - August 2026
+              • September 2021 - August 2026
             </code>
             <br />
-            <code className="text-sm">
-              Relevant Coursework: 
-              <p className="pl-4">
-                Finance, Economics, Accounting, Organizational Behaviour, Business Law, Human Resources Management,
-                Marketing Management
-              </p>
-            </code>
           </div>
         </div>
         </div>
@@ -79,7 +65,17 @@ const Resume = () => {
               <code className="text-blue_vs">Software Developer</code>
               <br />
               <code className="italic text-sm text-lightblue_vs">
-                Bank of Montreal
+                Bank of Montreal (BMO) | Toronto, ON
+              </code>
+              <br />
+              <code className="text-xs text-brown_vs">• September 2025 - December 2025</code>
+            </div>
+            <br />
+            <div>
+              <code className="text-blue_vs">Cloud Developer</code>
+              <br />
+              <code className="italic text-sm text-lightblue_vs">
+                Bank of Montreal (BMO)| Toronto, ON
               </code>
               <br />
               <code className="text-xs text-brown_vs">• January 2025 - April 2025</code>
@@ -89,7 +85,7 @@ const Resume = () => {
               <code className="text-blue_vs">Business Analyst</code>
               <br />
               <code className="italic text-sm text-lightblue_vs">
-                Bank of Montreal
+                Bank of Montreal (BMO) | Toronto, ON
               </code>
               <br />
               <code className="text-xs text-brown_vs">• January 2024 - April 2024</code>
@@ -100,7 +96,7 @@ const Resume = () => {
               <code className="text-blue_vs">Financial Analyst / Junior Underwriter</code>
               <br />
               <code className="italic text-sm text-lightblue_vs">
-              Trisura Guarantee Insurance Company
+              Trisura Guarantee Insurance Company | Toronto, ON
               </code>
               <br />
               <code className="text-xs text-brown_vs">• January 2023 - April 2023</code>

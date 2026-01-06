@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div
       id="About"
-      className="flex mx-12 mt-16 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
+      className="flex mx-12 mt-16 pb-24 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
     >
       <div>
         <div className="table">
@@ -18,19 +18,22 @@ const About = () => {
         </div>
         <div className="text-[#a2aabc] text-lg mt-5">
           <code>
-👋 Hi, I'm Josh! I'm currently in my fifth year studying Computer Science & Business at the University of Waterloo and Wilfrid Laurier University. I'm passionate about building software with real world impact and love working on projects that genuinely help people.
-
-I've had the opportunity to work as a Software Developer at BMO, where I built cloud-based systems on AWS, developed accessible web components, and worked on AI-powered tools including RAG chatbots and multi-agent systems. I enjoy working across the stack, from backend APIs and cloud infrastructure to clean intuitive frontends.
-
-Outside of internships, I'm involved with UW Blueprint, where I help build accessible, real world software for nonprofits. I'm especially interested in using technology to improve inclusion, usability, and user experience 🌱
-
-I enjoy keeping up with today's fast changing tech landscape and turning complex problems into simple, reliable solutions. In my free time, I love to play any racket sport from old to new!
-
-📬 Feel free to reach out, I'm always happy to connect!
+            👋 Hi, I'm Josh! I'm currently in my fifth year studying Computer Science & Business at the University of Waterloo and Wilfrid Laurier University. I'm passionate about building software with real world impact and love working on projects that genuinely help people. 
           </code>
           <br />
           <br />
-          <code>Aenean in mi non leo placerat suscipit a eget odio:</code>
+          <code>
+            I've had the opportunity to work as a Software Developer at BMO, where I built cloud-based systems on AWS, developed accessible web components, and worked on AI-powered tools including RAG chatbots and multi-agent systems. I enjoy working across the stack, from backend APIs and cloud infrastructure to clean intuitive frontends.
+            Outside of internships, I'm involved with UW Blueprint, where I help build accessible, real world software for nonprofits. I'm especially interested in using technology to improve inclusion, usability, and user experience 🌱
+          </code>
+          <br />
+          <br />
+          <code>
+            I enjoy keeping up with today's fast changing tech landscape and turning complex problems into simple, reliable solutions. In my free time, I love to play any racket sport from old to new!
+          </code>
+          <br />
+          <br />
+          <code>📬 Feel free to reach out, I'm always happy to connect!</code>
         </div>
       </div>
     </div>
