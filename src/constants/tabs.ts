@@ -1,4 +1,4 @@
-export type TabId = "home" | "about" | "skills" | "resume" | "contact";
+export type TabId = "home" | "about" | "projects" | "skills" | "resume" | "contact";
 
 interface TabConfig {
   id: TabId;
@@ -24,6 +24,12 @@ export const TAB_CONFIG: Record<TabId, TabConfig> = {
     sidebarLabel: "About.tsx",
     icon: TSIcon,
   },
+  projects: {
+    id: "projects",
+    label: "Projects.tsx",
+    sidebarLabel: "Projects.tsx",
+    icon: JSIcon,
+  },
   skills: {
     id: "skills",
     label: "Skills.ts",
@@ -44,6 +50,13 @@ export const TAB_CONFIG: Record<TabId, TabConfig> = {
   },
 };
 
-export const TAB_ORDER: TabId[] = ["home", "about", "skills", "resume", "contact"];
+export const TAB_ORDER: TabId[] = [
+  "home",
+  "about",
+  "projects",
+  "skills",
+  "resume",
+  "contact",
+];
 
 export const SIDEBAR_FILES: TabConfig[] = TAB_ORDER.map((tabId) => TAB_CONFIG[tabId]);

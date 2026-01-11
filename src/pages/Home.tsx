@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import SideBar from "../components/SideBar";
 import Resume from "./Resume";
 import Skills from "./Skills";
+import Projects from "./Projects";
 import MobileMenu from "../components/MobileMenu";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -129,6 +130,11 @@ const Home = () => {
             {activeTab === "resume" && openTabs.includes("resume") && (
               <div style={paddedStyle}>
                 <Resume />
+              </div>
+            )}
+            {activeTab === "projects" && openTabs.includes("projects") && (
+              <div style={paddedStyle}>
+                <Projects />
               </div>
             )}
             {activeTab === "contact" && openTabs.includes("contact") && (
