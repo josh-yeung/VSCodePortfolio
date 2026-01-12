@@ -4,7 +4,6 @@ import { SIDEBAR_FILES, TabId } from "../constants/tabs";
 
 const GitLogo = require("../assets/logos/GitLogo.png");
 const LinkedinLogo = require("../assets/logos/LinkedinLogo.png");
-const KaggleLogo = require("../assets/logos/KaggleLogo.png");
 const MailLogo = require("../assets/logos/MailLogo.png");
 
 const SideBar = ({
@@ -19,10 +18,14 @@ const SideBar = ({
   const [showWebList, SetShowWebList] = useState(true);
   const [showProjectsList, SetShowProjectsList] = useState(true);
 
+  const minWidth = 220;
+  const maxWidth = 360;
+
   const startResizing = (mouseDownEvent: React.MouseEvent) => {
     const handleMouseMove = (mouseMoveEvent: MouseEvent) => {
       const delta = mouseMoveEvent.clientX - mouseDownEvent.clientX;
-      const newWidth = Math.max(170, mouseDownEvent.clientX + delta);
+      const nextWidth = mouseDownEvent.clientX + delta;
+      const newWidth = Math.min(maxWidth, Math.max(minWidth, nextWidth));
       setWidth(newWidth);
     };
 
@@ -38,7 +41,9 @@ const SideBar = ({
   useEffect(() => {
     const savedWidth = localStorage.getItem("sideBarWidth");
     if (savedWidth) {
-      setWidth(parseInt(savedWidth));
+      const parsedWidth = parseInt(savedWidth, 10);
+      const clampedWidth = Math.min(maxWidth, Math.max(minWidth, parsedWidth));
+      setWidth(clampedWidth);
     }
   }, [setWidth]);
 
@@ -80,13 +85,6 @@ const SideBar = ({
                 <img
                   src={GitLogo}
                   alt="Git Logo"
-                  className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
-                />
-              </a>
-              <a href="/">
-                <img
-                  src={KaggleLogo}
-                  alt="Kaggle Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>

@@ -6,71 +6,24 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/solid";
 import { Disclosure, Transition } from "@headlessui/react";
-
-const JSIcon = require("../assets/icons/JSIcon.png");
-const TSIcon = require("../assets/icons/TSIcon.png");
+import { TAB_CONFIG, TAB_ORDER, TabId } from "../constants/tabs";
 
 const MobileMenu = () => {
-  const projects = [
-    {
-      name: "First Project",
-      href: "#",
-      icon: (
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="h-7 w-7 mr-1 ml-5 text-yellow_vs"
-        />
-      ),
-      current: true,
-    },
-    {
-      name: "Second Project",
-      href: "#",
-      icon: (
-        <img
-          src={TSIcon}
-          alt="TS Icon"
-          className="h-7 w-7 mr-1 ml-5 text-yellow_vs"
-        />
-      ),
-      current: false,
-    },
-    {
-      name: "Third Project",
-      href: "#",
-      icon: (
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="h-7 w-7 mr-1 ml-5 text-yellow_vs"
-        />
-      ),
-      current: false,
-    },
-    {
-      name: "Fourth Project",
-      href: "#",
-      icon: (
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="h-7 w-7 mr-1 ml-5 text-yellow_vs"
-        />
-      ),
-      current: false,
-    },
-  ];
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
-  const [showProjectsList, SetShowProjectsList] = useState(true);
+  const [showFilesList, setShowFilesList] = useState(true);
+  const sectionAnchors: Record<TabId, string> = {
+    home: "#home",
+    about: "#About",
+    projects: "#Projects",
+    skills: "#Skills",
+    resume: "#Resume",
+    contact: "#Contact",
+  };
 
   return (
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-[#2b2a2a] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             {open ? (
               <XIcon className="block w-16" aria-hidden="true" />
             ) : (
@@ -85,41 +38,41 @@ const MobileMenu = () => {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="">
-              <code className="px-2 pt-2 pb-3 space-y-1 text-white">
+            <Disclosure.Panel className="px-4 pt-2 pb-4">
+              <div className="rounded-lg border border-[#2f2f2f] bg-[#1b1b1b] p-4 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.8)]">
                 <div
-                  className="mb-2 ml-4 font-bold flex text-xl"
-                  onClick={() => SetShowProjectsList(!showProjectsList)}
+                  className="mb-3 flex items-center font-bold text-lg text-[#e6f1ff]"
+                  onClick={() => setShowFilesList(!showFilesList)}
                 >
-                  {showProjectsList ? (
-                    <ChevronDownIcon className="w-7 mr-4" />
+                  {showFilesList ? (
+                    <ChevronDownIcon className="w-6 mr-3" />
                   ) : (
-                    <ChevronRightIcon className=" w-7 mr-4 " />
+                    <ChevronRightIcon className="w-6 mr-3" />
                   )}
-                  Projects :
+                  Explorer
                 </div>
-                {showProjectsList
-                  ? projects.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "block px-3 py-2 rounded-md text-base font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        <div className="flex ml-6">
-                          {item.icon}
-                          {item.name}
-                        </div>
-                      </Disclosure.Button>
-                    ))
-                  : null}
-              </code>
+                {showFilesList ? (
+                  <div className="flex flex-col">
+                    {TAB_ORDER.map((tabId) => {
+                      const tab = TAB_CONFIG[tabId];
+                      return (
+                        <a
+                          key={tabId}
+                          href={sectionAnchors[tabId]}
+                          className="flex items-center gap-3 rounded px-3 py-2 text-[#a2aabc] hover:bg-[#2b2a2a] hover:text-yellow_vs"
+                        >
+                          <img
+                            src={tab.icon}
+                            alt={`${tab.label} icon`}
+                            className="h-5 w-5"
+                          />
+                          <span className="text-base">{tab.sidebarLabel}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </div>
             </Disclosure.Panel>
           </Transition>
         </>

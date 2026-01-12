@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      className="lg:w-1/2 mt-16 mb-4 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
+      className="lg:w-1/2 mt-16 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
     >
       <div className="table">
         <CollectionIcon className="h-5 w-5 mr-4 text-yellow_vs" />{" "}

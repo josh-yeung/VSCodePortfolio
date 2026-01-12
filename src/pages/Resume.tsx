@@ -10,7 +10,7 @@ const Resume = () => {
   return (
     <div
       id="Resume"
-      className="lg:w-1/2 mt-16 mb-4 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
+      className="lg:w-1/2 mt-16 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
     >
       <div>
         <div className="table">

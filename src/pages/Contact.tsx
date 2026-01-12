@@ -3,7 +3,7 @@ import { MailIcon } from "@heroicons/react/solid";
 
 const Contact = () => {
   return (
-    <div id="Contact" className="pb-72 mt-36">
+    <div id="Contact" className="pb-24 mt-16">
       <div className="table mx-12 lg:mx-60">
         <MailIcon className="h-5 w-5 mr-4 text-yellow_vs" />
         <code className="table-cell text-[#e6f1ff] text-3xl mt-5 whitespace-nowrap">
@@ -12,17 +12,58 @@ const Contact = () => {
         <div className="table-cell border-b border-b-[#e6f1ff] border-opacity-25 w-full"></div>
       </div>
       <div className="text-[#a2aabc] text-lg mt-5 mx-12 lg:mx-60 flex flex-col items-center text-justify">
-        <code>
-          Currently looking for a new opportunity, you can contact me by
-          clicking on the button below. <br />
-          Whether you have a question or just want to say hi, feel free to
-          contact me and I’ll try my best to get back to you!
-        </code>
-        <button className=" border border-lightblue_vs text-lightblue_vs mt-10 p-3 rounded hover:bg-opacity-10 hover:bg-lightblue_vs w-1/2">
-          <a href="mailto:youssefkizou@gmail.com">
-            <code>Contact</code>
-          </a>
-        </button>
+        <form
+          action="mailto:youssefkizou@gmail.com"
+          method="POST"
+          encType="text/plain"
+          className="mt-8 w-full max-w-2xl space-y-4"
+        >
+          <div className="flex flex-col gap-2">
+            <label htmlFor="fullName" className="text-sm text-lightblue_vs">
+              Full Name
+            </label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              placeholder="Your name"
+              className="rounded-md border border-[#2f2f2f] bg-[#1b1b1b] px-4 py-3 text-[#e6f1ff] placeholder:text-[#5b6274] focus:outline-none focus:ring-2 focus:ring-yellow_vs/40"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-sm text-lightblue_vs">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@email.com"
+              className="rounded-md border border-[#2f2f2f] bg-[#1b1b1b] px-4 py-3 text-[#e6f1ff] placeholder:text-[#5b6274] focus:outline-none focus:ring-2 focus:ring-yellow_vs/40"
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="message" className="text-sm text-lightblue_vs">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Enter your message!"
+              className="rounded-md border border-[#2f2f2f] bg-[#1b1b1b] px-4 py-3 text-[#e6f1ff] placeholder:text-[#5b6274] focus:outline-none focus:ring-2 focus:ring-yellow_vs/40"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="border border-lightblue_vs text-lightblue_vs mt-2 px-6 py-3 rounded hover:bg-opacity-10 hover:bg-lightblue_vs"
+          >
+            <code>Send Message</code>
+          </button>
+        </form>
       </div>
     </div>
   );

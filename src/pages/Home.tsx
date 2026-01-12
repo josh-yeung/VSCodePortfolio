@@ -117,9 +117,11 @@ const Home = () => {
               <div style={paddedStyle}>
                 <Header />
                 <About />
-                <Resume />
-                <Contact />
                 <Skills />
+                <Resume />
+                <Projects />
+                <Contact />
+                
               </div>
             )}
             {activeTab === "about" && openTabs.includes("about") && (

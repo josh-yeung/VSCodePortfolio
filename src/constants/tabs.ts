@@ -14,8 +14,8 @@ const JSIcon = require("../assets/icons/JSIcon.png");
 export const TAB_CONFIG: Record<TabId, TabConfig> = {
   home: {
     id: "home",
-    label: "Home.tsx",
-    sidebarLabel: "Home.tsx",
+    label: "Home.py",
+    sidebarLabel: "Home.py",
     icon: PythonIcon,
   },
   about: {
