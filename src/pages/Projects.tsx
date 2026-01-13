@@ -1,6 +1,9 @@
 import React from "react";
 import { CollectionIcon } from "@heroicons/react/solid";
 
+const ChessImage = require("../assets/images/chess.png");
+const BlueprintImage = require("../assets/images/eaf.png");
+
 const Projects = () => {
   return (
     <div
@@ -20,6 +23,11 @@ const Projects = () => {
             <code className="text-blue_vs text-xl">Chess</code>
             <code className="text-xs text-brown_vs">2024</code>
           </div>
+          <img
+            src={ChessImage}
+            alt="Chess project preview"
+            className="w-full h-108 object-cover rounded-md mt-3 border border-[#2f2f2f]"
+          />
           <code className="block mt-2">
             A competitive chess platform with real-time matchmaking, move
             validation, and analysis tools designed for fast, focused play.
@@ -41,6 +49,11 @@ const Projects = () => {
             <code className="text-blue_vs text-xl">UW Blueprint</code>
             <code className="text-xs text-brown_vs">2023</code>
           </div>
+          <img
+            src={BlueprintImage}
+            alt="UW Blueprint project preview"
+            className="w-full h-108 object-cover rounded-md mt-3 border border-[#2f2f2f]"
+          />
           <code className="block mt-2">
             Built accessible, user-centered software for nonprofits, focusing
             on inclusive UX and reliable delivery for real-world impact.
