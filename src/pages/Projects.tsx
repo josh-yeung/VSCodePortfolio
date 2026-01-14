@@ -8,10 +8,10 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      className="lg:w-1/2 mt-16 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
+      className="lg:w-1/2 mt-16 pb-24 text-center sm:text-justify mx-4 sm:mx-12 lg:mr-60 lg:ml-60"
     >
       <div className="table">
-        <CollectionIcon className="h-5 w-5 mr-4 text-yellow_vs" />{" "}
+        <CollectionIcon className="h-5 w-5 mr-4 text-yellow_vs" />
         <code className="table-cell text-[#e6f1ff] text-3xl mt-5 whitespace-nowrap">
           Projects
         </code>
@@ -26,7 +26,7 @@ const Projects = () => {
           <img
             src={ChessImage}
             alt="Chess project preview"
-            className="w-full h-108 object-cover rounded-md mt-3 border border-[#2f2f2f]"
+            className="w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] object-contain rounded-md mt-3 border border-[#2f2f2f] bg-[#141414]"
           />
           <code className="block mt-2">
             A competitive chess platform with real-time matchmaking, move
@@ -52,7 +52,7 @@ const Projects = () => {
           <img
             src={BlueprintImage}
             alt="UW Blueprint project preview"
-            className="w-full h-108 object-cover rounded-md mt-3 border border-[#2f2f2f]"
+            className="w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] object-contain rounded-md mt-3 border border-[#2f2f2f] bg-[#141414]"
           />
           <code className="block mt-2">
             Built accessible, user-centered software for nonprofits, focusing

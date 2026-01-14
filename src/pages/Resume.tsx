@@ -10,7 +10,7 @@ const Resume = () => {
   return (
     <div
       id="Resume"
-      className="lg:w-1/2 mt-16 pb-24 text-justify mx-12 lg:mr-60 lg:ml-60"
+      className="lg:w-1/2 mt-16 pb-24 text-center sm:text-justify mx-4 sm:mx-12 lg:mr-60 lg:ml-60"
     >
       <div>
         <div className="table">
@@ -30,11 +30,11 @@ const Resume = () => {
         </div>
       </div>
       <div className="text-[#a2aabc] text-lg mt-5">
-        <div className="flex flex-row">
-          <div className="w-1/4">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0">
+          <div className="w-full lg:w-1/4">
             <code className="text-yellow_vs">Education</code>
           </div>
-          <div className="w-3/4 flex flex-col gap-6">
+          <div className="w-full lg:w-3/4 flex flex-col gap-6">
             <div className="flex items-start gap-4">
               <img
                 src={WaterlooLogo}
@@ -75,11 +75,11 @@ const Resume = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row pt-10">
-          <div className="w-1/4">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 pt-10">
+          <div className="w-full lg:w-1/4">
             <code className="text-yellow_vs">Experience</code>
           </div>
-          <div className="w-3/4">
+          <div className="w-full lg:w-3/4">
             <div className="flex items-start gap-4">
               <img
                 src={BmoLogo}

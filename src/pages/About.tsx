@@ -10,9 +10,9 @@ const About = () => {
   return (
     <div
       id="About"
-      className="flex mx-12 mt-16 pb-24 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
+      className="flex mx-4 sm:mx-12 mt-16 pb-24 lg:mx-60 items-center justify-center lg:w-1/2 text-center sm:text-justify"
     >
-      <div>
+      <div className="w-full sm:w-auto">
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <img
             src={JoshPhoto}

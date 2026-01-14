@@ -7,6 +7,7 @@ const Container = tw.button`
   h-full
   flex
   items-center
+  min-w-0
   px-4
   gap-2
   text-sm
@@ -108,9 +109,11 @@ const NavBar: React.FC<Props> = ({
                 alt={`${tabInfo.label} icon`}
                 className="h-5 w-5"
               />
-              <span>{tabInfo.label}</span>
+              <span className="truncate max-w-[120px] sm:max-w-[180px] lg:max-w-none">
+                {tabInfo.label}
+              </span>
               <XIcon
-                className="w-4 h-4 ml-2 text-gray-400 hover:text-white"
+                className="w-4 h-4 ml-2 text-gray-400 hover:text-white shrink-0"
                 onClick={(event) => {
                   event.stopPropagation();
                   onCloseTab(tabId);

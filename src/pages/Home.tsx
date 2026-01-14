@@ -15,6 +15,10 @@ const Home = () => {
   const [openTabs, setOpenTabs] = useState<TabId[]>(TAB_ORDER);
   const [sidebarWidth, setSidebarWidth] = useState(270); // Default width
   const paddedStyle = { paddingLeft: `${sidebarWidth}px` };
+  const navBarStyle = {
+    marginLeft: `${sidebarWidth}px`,
+    width: `calc(100% - ${sidebarWidth}px)`,
+  };
   const hasOpenTabs = openTabs.length > 0;
 
   useEffect(() => {
@@ -97,10 +101,13 @@ const Home = () => {
       </div>
       <div className="bg-[#1e1e1e] h-full flex-1 w-full">
         <div className="lg:hidden">
-          <MobileMenu />
+          <MobileMenu onOpenTab={handleOpenTab} />
         </div>
         {hasOpenTabs && (
-          <div className="bg-[#424042] h-16 hidden lg:block" style={paddedStyle}>
+          <div
+            className="bg-[#424042] h-16 hidden lg:block sticky top-0 z-30"
+            style={navBarStyle}
+          >
             <NavBar
               activeTab={activeTab}
               setActiveTab={setActiveTab}
@@ -115,7 +122,7 @@ const Home = () => {
           <>
             {activeTab === "home" && openTabs.includes("home") && (
               <div style={paddedStyle}>
-                <Header />
+                <Header onOpenTab={handleOpenTab} />
                 <About />
                 <Skills />
                 <Resume />

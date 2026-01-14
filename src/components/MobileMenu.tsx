@@ -8,7 +8,7 @@ import {
 import { Disclosure, Transition } from "@headlessui/react";
 import { TAB_CONFIG, TAB_ORDER, TabId } from "../constants/tabs";
 
-const MobileMenu = () => {
+const MobileMenu = ({ onOpenTab }: { onOpenTab: (tabId: TabId) => void }) => {
   const [showFilesList, setShowFilesList] = useState(true);
   const sectionAnchors: Record<TabId, string> = {
     home: "#home",
@@ -56,9 +56,11 @@ const MobileMenu = () => {
                     {TAB_ORDER.map((tabId) => {
                       const tab = TAB_CONFIG[tabId];
                       return (
-                        <a
+                        <Disclosure.Button
                           key={tabId}
-                          href={sectionAnchors[tabId]}
+                          as="button"
+                          type="button"
+                          onClick={() => onOpenTab(tabId)}
                           className="flex items-center gap-3 rounded px-3 py-2 text-[#a2aabc] hover:bg-[#2b2a2a] hover:text-yellow_vs"
                         >
                           <img
@@ -67,7 +69,7 @@ const MobileMenu = () => {
                             className="h-5 w-5"
                           />
                           <span className="text-base">{tab.sidebarLabel}</span>
-                        </a>
+                        </Disclosure.Button>
                       );
                     })}
                   </div>
