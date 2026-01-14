@@ -10,42 +10,43 @@ interface TabConfig {
 const PythonIcon = require("../assets/icons/PythonIcon.png");
 const TSIcon = require("../assets/icons/TSIcon.png");
 const JSIcon = require("../assets/icons/JSIcon.png");
+const CppIcon = require("../assets/logos/C++_Logo.png");
 
 export const TAB_CONFIG: Record<TabId, TabConfig> = {
   home: {
     id: "home",
-    label: "Home.py",
-    sidebarLabel: "Home.py",
-    icon: PythonIcon,
+    label: "home.ts",
+    sidebarLabel: "home.ts",
+    icon: TSIcon,
   },
   about: {
     id: "about",
-    label: "About.tsx",
-    sidebarLabel: "About.tsx",
+    label: "about.ts",
+    sidebarLabel: "about.ts",
     icon: TSIcon,
   },
   projects: {
     id: "projects",
-    label: "Projects.tsx",
-    sidebarLabel: "Projects.tsx",
-    icon: JSIcon,
+    label: "projects.cc",
+    sidebarLabel: "projects.cc",
+    icon: CppIcon,
   },
   skills: {
     id: "skills",
-    label: "Skills.ts",
-    sidebarLabel: "Skills.ts",
+    label: "skills.js",
+    sidebarLabel: "skills.js",
     icon: JSIcon,
   },
   resume: {
     id: "resume",
-    label: "Resume.tsx",
-    sidebarLabel: "Resume.tsx",
-    icon: TSIcon,
+    label: "resume.py",
+    sidebarLabel: "resume.py",
+    icon: PythonIcon,
   },
   contact: {
     id: "contact",
-    label: "Contact.tsx",
-    sidebarLabel: "Contact.tsx",
+    label: "contact.js",
+    sidebarLabel: "contact.js",
     icon: JSIcon,
   },
 };
