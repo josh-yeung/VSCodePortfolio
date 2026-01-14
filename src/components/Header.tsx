@@ -22,21 +22,21 @@ function Header({ onOpenTab }: { onOpenTab: (tabId: TabId) => void }) {
         <div className="h-px w-28 bg-gradient-to-r from-yellow_vs/80 to-transparent mt-2"></div>
       </div>
       <div className="flex items-center justify-center sm:justify-start gap-6 mt-6">
-        <a href="/" aria-label="GitHub">
+        <a href="https://github.com/josh-yeung/" aria-label="GitHub">
           <img
             src={GitLogo}
             alt="GitHub logo"
             className="h-8 w-8 hover:scale-110 duration-300"
           />
         </a>
-        <a href="/" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/joshua-yeung/" aria-label="LinkedIn">
           <img
             src={LinkedinLogo}
             alt="LinkedIn logo"
             className="h-8 w-8 hover:scale-110 duration-300"
           />
         </a>
-        <a href="mailto:youssefkizou@gmail.com" aria-label="Email">
+        <a href="mailto:joshyeung126@gmail.com" aria-label="Email">
           <img
             src={MailLogo}
             alt="Email icon"

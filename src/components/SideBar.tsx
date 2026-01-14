@@ -81,21 +81,21 @@ const SideBar = ({
           ) : null}
           <div className="absolute w-full bottom-10 px-6">
             <div className="flex justify-between">
-              <a href="/">
+              <a href="https://github.com/josh-yeung/">
                 <img
                   src={GitLogo}
                   alt="Git Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
-              <a href="/">
+              <a href="https://linkedin.com/in/joshua-yeung/">
                 <img
                   src={LinkedinLogo}
                   alt="Linkedin Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
-              <a href="/">
+              <a href="mailto:joshyeung126@gmail.com">
                 <img
                   src={MailLogo}
                   alt="Mail Logo"

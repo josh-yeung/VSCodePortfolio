@@ -2,6 +2,23 @@ import React from "react";
 import { MailIcon } from "@heroicons/react/solid";
 
 const Contact = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const fullName = (formData.get("fullName") || "").toString().trim();
+    const email = (formData.get("email") || "").toString().trim();
+    const message = (formData.get("message") || "").toString().trim();
+
+    const subject = encodeURIComponent(
+      fullName ? `Message from ${fullName}` : "Message from portfolio"
+    );
+    const body = encodeURIComponent(
+      `Name: ${fullName || "N/A"}\nEmail: ${email || "N/A"}\n\n${message}`
+    );
+
+    window.location.href = `mailto:joshyeung126@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div
       id="Contact"
@@ -15,12 +32,7 @@ const Contact = () => {
         <div className="table-cell border-b border-b-[#e6f1ff] border-opacity-25 w-full"></div>
       </div>
       <div className="text-[#a2aabc] text-lg mt-5 flex flex-col items-stretch sm:items-center">
-        <form
-          action="mailto:youssefkizou@gmail.com"
-          method="POST"
-          encType="text/plain"
-          className="mt-8 w-full max-w-2xl space-y-4"
-        >
+        <form onSubmit={handleSubmit} className="mt-8 w-full max-w-2xl space-y-4">
           <div className="flex flex-col gap-2">
             <label htmlFor="fullName" className="text-sm text-lightblue_vs">
               Full Name
