@@ -1,7 +1,7 @@
 {
   "name": "kizou",
   "version": "0.1.0",
-  "homepage": "http://kizou.org",
+  "homepage": "https://josh-yeung.github.io",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.5.0",
@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "build:docs": "BUILD_PATH=docs react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "tailwind-styled-components": "^2.2.0",
-    "tailwindcss": "^3.0.6"
+    "tailwindcss": "^3.0.6",
+    "gh-pages": "^6.1.1"
   }
 }
