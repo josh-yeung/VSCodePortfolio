@@ -17,17 +17,17 @@ const About = () => {
           <img
             src={JoshPhoto}
             alt="Josh portrait"
-            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)]"
+            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] transition-transform duration-300 hover:scale-[1.04]"
           />
           <img
             src={ParisPhoto}
             alt="Paris"
-            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)]"
+            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] transition-transform duration-300 hover:scale-[1.04]"
           />
           <img
             src={NyPhoto}
             alt="New York"
-            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)]"
+            className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 rounded-2xl object-cover border border-[#333333] ring-1 ring-yellow_vs/30 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] transition-transform duration-300 hover:scale-[1.04]"
           />
         </div>
         <div className="table">

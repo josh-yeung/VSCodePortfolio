@@ -54,9 +54,9 @@ export const TAB_CONFIG: Record<TabId, TabConfig> = {
 export const TAB_ORDER: TabId[] = [
   "home",
   "about",
-  "projects",
   "skills",
   "resume",
+  "projects",
   "contact",
 ];
 
